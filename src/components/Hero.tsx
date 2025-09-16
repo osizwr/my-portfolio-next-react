@@ -61,7 +61,7 @@ export function Hero() {
                 Download Resume
               </Button>
             </div>
-          </div>
+          </div> 
 
           {/* Right Content - Profile Photo */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
