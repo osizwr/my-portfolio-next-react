@@ -32,7 +32,7 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-tight mb-6">
-              Hi, I'm <span className="text-primary font-medium">Marvin</span>
+              Hi, I&apos;m <span className="text-primary font-medium">Marvin</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
