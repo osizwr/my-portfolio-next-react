@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { HeroBackground } from './HeroBackground';
 import { ServicesBackground } from './ServicesBackground';
 import { ProjectsBackground } from './ProjectsBackground';
