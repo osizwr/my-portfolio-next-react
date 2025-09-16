@@ -50,7 +50,7 @@ export function Hero() {
                 }}
                 className="px-8 py-6 text-lg rounded-full cursor-pointer"
               >
-                Let's Work Together
+                Let&apos;s Work Together
               </Button>
               <Button
                 variant="outline"

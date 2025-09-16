@@ -61,10 +61,10 @@ export function Contact() {
             Get In Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
-            Let's Work <span className="font-medium">Together</span>
+            Let&apos;s Work <span className="font-medium">Together</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Let's discuss how we can bring your ideas to life.
+            Have a project in mind? I&apos;d love to hear about it. Let&apos;s discuss how we can bring your ideas to life.
           </p>
         </div>
 
