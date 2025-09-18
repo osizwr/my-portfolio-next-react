@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Toaster } from '../components/ui/sonner';
-import { Navbar } from '../components/Navbar';
-import { Hero } from '../components/Hero';
-import { Services } from '../components/Services';
-import { Projects } from '../components/Projects';
-import { Contact } from '../components/Contact';
-import { Footer } from '../components/Footer';
-import { ScrollToTop } from '../components/ScrollToTop';
+import { Toaster } from './components/ui/sonner';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { Services } from './components/Services';
+import { Projects } from './components/Projects';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
