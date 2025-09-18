@@ -1,31 +1,39 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ProjectsBackground } from './ProjectsBackground';
+import Link from "next/link";
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A modern e-commerce solution with seamless user experience, advanced filtering, and secure payment integration.',
-    image: 'https://images.unsplash.com/photo-1705909773420-8d7af2a343f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwd29ya3NwYWNlJTIwZGVzaWdufGVufDF8fHx8MTc1Nzk0MDkzMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-    category: 'Web Application'
+    title: 'FarmLinq',
+    description: 'A farm-to-table marketplace that bridges local farmers and consumers, making fresh, sustainable, and organic produce more accessible while supporting local communities.',
+    image: '/assets/image/farmlinq.png',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+    category: 'Web Application',
+    code: 'https://github.com/osizwr',
+    livedemo: ''
   },
   {
     title: 'Design System',
     description: 'Comprehensive design system and component library for consistent user interfaces across multiple products.',
     image: 'https://images.unsplash.com/photo-1677214467820-ab069619bbb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ258ZW58MXx8fHwxNzU3OTE4NTI4fDA&ixlib=rb-4.1.0&q=80&w=1080',
     technologies: ['Figma', 'Storybook', 'React', 'CSS-in-JS'],
-    category: 'Design System'
+    category: 'Design System',
+    code: 'https://github.com/osizwr',
+    livedemo: ''
   },
   {
     title: 'Dashboard Analytics',
     description: 'Real-time analytics dashboard with interactive charts, data visualization, and customizable widgets.',
     image: 'https://images.unsplash.com/photo-1676263813382-bb5ba4b63f91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMGRlc2lnbiUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTc5NDA5Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
     technologies: ['Vue.js', 'D3.js', 'Node.js', 'MongoDB'],
-    category: 'Data Visualization'
+    category: 'Data Visualization',
+    code: 'https://github.com/osizwr',
+    livedemo: ''
   }
 ];
 
@@ -85,20 +93,22 @@ export function Projects() {
                 </div>
                 
                 <div className="flex gap-3">
+                  <a href={project.code} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="flex-1 cursor-pointer"
+                    >
+                      <SiGithub className="w-4 h-4 mr-2" />
+                      Code
+                    </Button>
+                  </a>
                   <Button
                     size="sm"
-                    variant="outline"
-                    className="flex-1"
+                    className="flex-1 cursor-pointer"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="flex-1"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <ExternalLink  className="w-4 h-4 mr-2" />
+                    <a href="{project.livedemo}">Live Demo</a>
                   </Button>
                 </div>
               </CardContent>
@@ -107,8 +117,8 @@ export function Projects() {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="px-8 py-6 text-lg rounded-full">
-            View All Projects
+          <Button variant="outline" size="lg" className="px-8 py-6 text-lg rounded-full cursor-pointer" >
+            <Link href="projects">View All Projects</Link>
           </Button>
         </div>
       </div>

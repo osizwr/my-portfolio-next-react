@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { ChevronDown, Download } from 'lucide-react';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -68,7 +67,7 @@ export function Hero() {
             <div className="relative">
               <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px]">
                 <ImageWithFallback
-                  src="#"
+                  src="/assets/image/hero-dp.png"
                   alt="Portfolio Owner"
                   className="w-full h-full object-cover rounded-full border-4 border-background shadow-2xl"
                 />

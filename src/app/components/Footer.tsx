@@ -1,21 +1,21 @@
-import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { SiReact, SiFacebook, SiGithub, SiInstagram } from '@icons-pack/react-simple-icons';
 
 export function Footer() {
   const socialLinks = [
     {
-      icon: Github,
-      href: 'https://github.com',
+      icon: SiGithub,
+      href: 'https://github.com/osizwr',
       label: 'GitHub'
     },
     {
-      icon: Linkedin,
-      href: 'https://linkedin.com',
-      label: 'LinkedIn'
+      icon: SiInstagram,
+      href: 'https://www.instagram.com/marvin_jseph/',
+      label: 'Instagram'
     },
     {
-      icon: Twitter,
-      href: 'https://twitter.com',
-      label: 'Twitter'
+      icon: SiFacebook,
+      href: 'https://www.facebook.com/marvinsrmtc',
+      label: 'Facebook'
     }
   ];
 
@@ -32,7 +32,7 @@ export function Footer() {
               onClick={scrollToTop}
               className="text-2xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
             >
-              Portfolio
+              MJ/MC
             </button>
           </div>
 
@@ -53,8 +53,8 @@ export function Footer() {
 
           <div className="flex items-center text-muted-foreground">
             <span>Made with</span>
-            <Heart className="w-4 h-4 fill-red-500 text-red-500 mx-2" />
-            <span>© 2025 Portfolio. All rights reserved.</span>
+            <SiReact className="w-4 h-4 fill-red-500 text-red-500 mx-2" />
+            <span>©<span className='font-bold'>MJ/MC</span>. All rights reserved.</span>
           </div>
         </div>
       </div>

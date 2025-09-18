@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+"use client";
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';

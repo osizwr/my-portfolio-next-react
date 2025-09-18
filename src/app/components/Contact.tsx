@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { Button } from './ui/button';
@@ -15,11 +16,28 @@ export function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast.success('Message sent successfully! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("✅ Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast.error("❌ Failed to send message. Try again later.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("⚠️ Something went wrong.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -33,19 +51,19 @@ export function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@portfolio.com',
-      href: 'mailto:hello@portfolio.com'
+      value: 'marvinjoseph.cajilo@gmail.com',
+      href: 'mailto:marvinjoseph.cajilo@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567'
+      value: '+63 (976) 340 8136',
+      href: 'tel:+639763408136'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Puerto Princesa City, Palawan',
       href: '#'
     }
   ];
@@ -104,7 +122,7 @@ export function Contact() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-6 rounded-[0px] m-0">
+              <CardContent className="p-10 rounded-[0px] m-0 box-content size-101.5">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -174,7 +192,7 @@ export function Contact() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full md:w-auto px-8 py-6 text-lg rounded-full"
+                    className="w-full md:w-auto px-8 py-6 text-lg rounded-full cursor-pointer"
                   >
                     <Send className="w-5 h-5 mr-2" />
                     Send Message
