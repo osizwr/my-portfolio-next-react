@@ -63,7 +63,7 @@ export function Hero() {
           </div> 
 
           {/* Right Content - Profile Photo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 mt-25 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px]">
                 <ImageWithFallback
