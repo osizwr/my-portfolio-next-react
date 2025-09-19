@@ -122,7 +122,7 @@ export function Contact() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-10 rounded-[0px] m-0 box-content size-101.5">
+              <CardContent className="p-6 rounded-[0px] m-0">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
