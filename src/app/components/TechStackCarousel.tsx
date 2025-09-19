@@ -1,78 +1,73 @@
 import { motion } from 'framer-motion';
-import { 
-  Code2,
-  Pyramid,
-  Globe, 
-  Palette, 
-  DatabaseBackup, 
-  Zap,
-  Layers,
-  Terminal,
-  GitBranch,
-  Cloud
-} from 'lucide-react';
+import {
+  SiVuedotjs,
+  SiNextdotjs,
+  SiDjango,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiTypescript,
+  SiFigma,
+  SiGit,
+  SiVercel
+
+} from '@icons-pack/react-simple-icons';
 
 const techStack = [
   {
-    name: 'React',
-    icon: Pyramid,
-    category: 'Frontend',
-    color: 'text-blue-500'
-  },
-  {
     name: 'Vue.js',
-    icon: Code2,
-    category: 'Frontend',
-    color: 'text-green-500'
-  },
-  {
-    name: 'TypeScript',
-    icon: Terminal,
-    category: 'Language',
-    color: 'text-blue-600'
+    icon: SiVuedotjs,
+    category: 'Framework',
+    color: 'text-[#4FC08D]'
   },
   {
     name: 'Next.js',
-    icon: Globe,
+    icon: SiNextdotjs,
     category: 'Framework',
-    color: 'text-gray-900 dark:text-white'
+    color: 'text-[#000000]'
+  },
+  {
+    name: 'TypeScript',
+    icon: SiTypescript,
+    category: 'Language',
+    color: 'text-[#3178C6]'
   },
   {
     name: 'Tailwind CSS',
-    icon: Palette,
+    icon: SiTailwindcss,
     category: 'Styling',
-    color: 'text-cyan-500'
-  },
-  {
-    name: 'Node.js',
-    icon: Zap,
-    category: 'Backend',
-    color: 'text-green-500'
+    color: 'text-[#06B6D4]'
   },
   {
     name: 'Figma',
-    icon: Layers,
+    icon: SiFigma,
     category: 'Design',
-    color: 'text-purple-500'
+    color: 'text-[#F24E1E]'
   },
   {
     name: 'Git',
-    icon: GitBranch,
+    icon: SiGit,
     category: 'Version Control',
-    color: 'text-orange-500'
-  },
-  {
-    name: 'Vercel',
-    icon: Cloud,
-    category: 'Deployment',
-    color: 'text-gray-900 dark:text-white'
+    color: 'text-[#F05032]'
   },
   {
     name: 'Django',
-    icon: DatabaseBackup,
+    icon: SiDjango,
     category: 'Backend',
-    color: 'text-green-400'
-  }
+    color: 'text-[#092E20]'
+  },
+  {
+    name: 'Node.js',
+    icon: SiNodedotjs,
+    category: 'Backend',
+    color: 'text-[#5FA04E]'
+  },
+  {
+    name: 'Vercel',
+    icon: SiVercel,
+    category: 'Deployment',
+    color: 'text-[#000000]'
+  },
+  
 ];
 
 export function TechStackCarousel() {
