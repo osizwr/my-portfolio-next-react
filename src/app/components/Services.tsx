@@ -13,7 +13,7 @@ const services = [
     icon: Code,
     title: 'Frontend Development',
     description: 'Building responsive, performant web applications using modern frameworks and best practices.',
-    features: ['React/Vue.js', 'TypeScript', 'Tailwind CSS', 'Performance Optimization']
+    features: ['Vue.js/React', 'Next.js/React', 'TypeScript', 'Tailwind CSS', 'Performance Optimization']
   },
   {
     icon: Smartphone,
@@ -25,7 +25,7 @@ const services = [
     icon: Server,
     title: 'Backend Development',
     description: 'Building robust server-side applications and APIs that power modern web applications.',
-    features: ['Node.js/Express', 'Database Design', 'RESTful APIs', 'Authentication & Security']
+    features: ['Node.js/Express', 'Django', 'Database Design', 'RESTful APIs', 'Authentication & Security']
   }
 ];
 
