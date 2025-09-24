@@ -55,7 +55,11 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 className="px-8 py-6 text-lg rounded-full cursor-pointer"
-              >
+                onClick={() => {
+                    // Replace with your actual resume path
+                    window.open("/resume.pdf", "_blank");
+                  }}
+                >
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
               </Button>
