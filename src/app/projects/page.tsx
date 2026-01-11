@@ -65,7 +65,7 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const openModal = (project: any) => {
+  const openModal = (project: (typeof projects)[0]) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
     document.body.style.overflow = 'hidden';
