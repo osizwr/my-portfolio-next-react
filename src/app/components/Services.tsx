@@ -34,11 +34,11 @@ export function Services() {
     <section id="services" className="py-24 bg-muted/30 relative overflow-hidden">
       {/* Animated Background */}
       <ServicesBackground />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            What I Do
+            What I Offer
           </span>
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
             Services & <span className="font-medium">Expertise</span>
@@ -58,11 +58,11 @@ export function Services() {
                   </div>
                   <h3 className="text-xl font-medium">{service.title}</h3>
                 </div>
-                
+
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {service.features.map((feature, featureIndex) => (
                     <span

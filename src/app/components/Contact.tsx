@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Loader2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -15,9 +15,11 @@ export function Contact() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const res = await fetch("/api/contact", {
@@ -29,7 +31,7 @@ export function Contact() {
       const data = await res.json();
 
       if (data.success) {
-        toast.success("✅ Message sent successfully!");
+        toast.success("Message sent successfully!");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         toast.error("❌ Failed to send message. Try again later.");
@@ -37,6 +39,8 @@ export function Contact() {
     } catch (err) {
       console.error(err);
       toast.error("⚠️ Something went wrong.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -55,16 +59,22 @@ export function Contact() {
       href: 'mailto:marvinjoseph.cajilo@gmail.com'
     },
     {
+      icon: Send,
+      label: 'Telegram',
+      value: '@impre2001',
+      href: 'https://t.me/impre2001'
+    },
+    {
       icon: Phone,
-      label: 'Phone',
-      value: '+63 (976) 340 8136',
-      href: 'tel:+639763408136'
+      label: 'WhatsApp',
+      value: '+63 (916) 684 6015',
+      href: 'tel:+639166846015'
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'Puerto Princesa City, Palawan',
-      href: '#'
+      href: 'https://www.google.com/maps/search/?api=1&query=Puerto+Princesa+City+Palawan'
     }
   ];
 
@@ -72,7 +82,7 @@ export function Contact() {
     <section id="contact" className="py-24 bg-muted/30 relative overflow-hidden">
       {/* Animated Background */}
       <ContactBackground />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -137,7 +147,7 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         className="bg-background/50"
-                        placeholder="Your name"
+                        placeholder="John Doe"
                       />
                     </div>
                     <div>
@@ -152,7 +162,7 @@ export function Contact() {
                         onChange={handleChange}
                         required
                         className="bg-background/50"
-                        placeholder="your.email@example.com"
+                        placeholder="johndoe@email.com"
                       />
                     </div>
                   </div>
@@ -192,10 +202,20 @@ export function Contact() {
                   <Button
                     type="submit"
                     size="lg"
+                    disabled={isSubmitting}
                     className="w-full md:w-auto px-8 py-6 text-lg rounded-full cursor-pointer"
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 mr-2" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>

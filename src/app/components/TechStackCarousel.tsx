@@ -67,7 +67,7 @@ const techStack = [
     category: 'Deployment',
     color: 'text-[#000000]'
   },
-  
+
 ];
 
 export function TechStackCarousel() {
@@ -78,23 +78,23 @@ export function TechStackCarousel() {
     <div className="w-full overflow-hidden py-8">
       <div className="text-center mb-8">
         <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">
-          Tech Stack
+          My Tech Stack
         </span>
         <p className="text-muted-foreground">
           Technologies I work with daily
         </p>
       </div>
-      
+
       <div className="relative">
         {/* Gradient overlays for smooth fade effect */}
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
-        
+
         {/* Scrolling container */}
         <motion.div
-          className="flex gap-6"
+          className="flex w-max"
           animate={{
-            x: [-1920, 0] // Adjust based on total width
+            x: ["0%", "-50%"]
           }}
           transition={{
             x: {
@@ -108,8 +108,8 @@ export function TechStackCarousel() {
           {duplicatedTechStack.map((tech, index) => (
             <motion.div
               key={`${tech.name}-${index}`}
-              className="flex-shrink-0 flex flex-col items-center justify-center p-6 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl min-w-[160px] group hover:shadow-lg transition-all duration-300"
-              whileHover={{ 
+              className="flex-shrink-0 flex flex-col items-center justify-center p-6 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl min-w-[160px] mr-6 group hover:shadow-lg transition-all duration-300"
+              whileHover={{
                 scale: 1.05,
                 y: -5
               }}

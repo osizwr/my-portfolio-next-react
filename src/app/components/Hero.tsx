@@ -16,17 +16,17 @@ export function Hero() {
     <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       {/* Animated Background */}
       <HeroBackground />
-      
+
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
-      
+
       <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto mb-16">
           {/* Left Content */}
           <div className="order-2 lg:order-1">
             <div className="mb-6 ">
               <span className="inline-block px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-6">
-                Front-End Developer
+                Full-Stack Web Developer
               </span>
             </div>
 
@@ -56,15 +56,15 @@ export function Hero() {
                 size="lg"
                 className="px-8 py-6 text-lg rounded-full cursor-pointer"
                 onClick={() => {
-                    // Replace with your actual resume path
-                    window.open("/resume.pdf", "_blank");
-                  }}
-                >
+                  // Replace with your actual resume path
+                  window.open("/resume.pdf", "_blank");
+                }}
+              >
                 <Download className="w-5 h-5 mr-2" />
                 Download Resume
               </Button>
             </div>
-          </div> 
+          </div>
 
           {/* Right Content - Profile Photo */}
           <div className="order-1 lg:order-2 mt-25 flex justify-center lg:justify-end">
